@@ -12,12 +12,6 @@ Stop wasting server resources on inefficient cron job polling. Receive instant d
 
 ---
 
-> 🇱🇰 **සිංහල සටහන (Developer Note):**  
-> Koombiyo Delivery හරහා packages deliver වන විට, status එක change වෙන හැම අවස්ථාවකදීම (Delivered, Out for Delivery, Return, etc.) Koombiyo server එකෙන් අපේ server එකේ webhook URL එකට POST request එකක් (JSON payload) එවනු ලබයි.  
-> Cron jobs දාලා APIs repeatedly call (polling) කරනවා වෙනුවට මේ webhook එක භාවිතා කිරීමෙන් තත්පර ගණනකින් status update කරගත හැක.
-
----
-
 ## 📌 Table of Contents
 1. [How It Works](#1-how-it-works)
 2. [Configuring Webhook in Koombiyo Portal](#2-configuring-webhook-in-koombiyo-portal)
