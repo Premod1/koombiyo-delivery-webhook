@@ -1,0 +1,117 @@
+{
+  "info": {
+    "_postman_id": "a9b1c2d3-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+    "name": "Koombiyo Delivery Webhook Collection",
+    "description": "Sample webhook payloads sent by Koombiyo Delivery Logistics to test receiver endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "webhook_url",
+      "value": "http://localhost:3000/api/webhooks/koombiyo",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Delivered (Status 5)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"waybill_id\": \"102938475\",\n  \"status_id\": \"5\",\n  \"status\": \"Delivered\",\n  \"weight\": \"1.25\",\n  \"status_date\": \"2026-10-26 14:32:00\",\n  \"del_charge\": \"350.00\",\n  \"reason\": \"Delivered to customer\"\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      }
+    },
+    {
+      "name": "2. Out for Delivery (Status 4)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"waybill_id\": \"102938475\",\n  \"status_id\": \"4\",\n  \"status\": \"Out for Delivery\",\n  \"weight\": \"1.25\",\n  \"status_date\": \"2026-10-26 09:15:00\",\n  \"del_charge\": \"350.00\",\n  \"reason\": \"Handed to courier rider\"\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      }
+    },
+    {
+      "name": "3. In Transit (Status 2)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"waybill_id\": \"102938475\",\n  \"status_id\": \"2\",\n  \"status\": \"In Transit\",\n  \"weight\": \"1.20\",\n  \"status_date\": \"2026-10-25 18:45:00\",\n  \"del_charge\": \"350.00\",\n  \"reason\": \"Dispatched from Central Hub\"\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      }
+    },
+    {
+      "name": "4. Pending Return (Status 9)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"waybill_id\": \"102938475\",\n  \"status_id\": \"9\",\n  \"status\": \"Pending Return\",\n  \"weight\": \"1.25\",\n  \"status_date\": \"2026-10-27 11:20:00\",\n  \"del_charge\": \"350.00\",\n  \"reason\": \"Customer unreachable after 3 attempts\"\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      }
+    },
+    {
+      "name": "5. Return Received at Merchant (Status 15)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"waybill_id\": \"102938475\",\n  \"status_id\": \"15\",\n  \"status\": \"Return Received\",\n  \"weight\": \"1.25\",\n  \"status_date\": \"2026-10-28 16:00:00\",\n  \"del_charge\": \"350.00\",\n  \"reason\": \"Returned back to merchant warehouse\"\n}"
+        },
+        "url": {
+          "raw": "{{webhook_url}}",
+          "host": ["{{webhook_url}}"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "koombiyo-webhook-nodejs-express",
+  "version": "1.0.0",
+  "description": "Ready-to-use Koombiyo Delivery Webhook receiver built with Node.js and Express",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "koombiyo",
+    "delivery",
+    "webhook",
+    "express",
+    "nodejs",
+    "sri-lanka",
+    "courier",
+    "logistics"
+  ],
+  "author": "Pramod",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
